@@ -1,0 +1,9 @@
+.navbar {
+    background-color: #808080;
+    flex-wrap: nowrap;
+    padding: 20px;
+}
+
+.navButton {
+    float: right;
+}
