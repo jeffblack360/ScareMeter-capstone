@@ -40,32 +40,29 @@ export const Login = () => {
     return (
         <main className="container--login">
             <dialog className="dialog dialog--auth" open={existDialog}>
-                <div>User does not exist</div>
+                <div>BOO! This user's a ghost!</div>
                 <button className="button--close" onClick={e => setExistDialog(false)}>Close</button>
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Nutshell</h1>
-                    <h2>Please sign in</h2>
+                    <h1>ScareMeter!</h1>
                     <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+                        <label htmlFor="inputEmail">Login Here!</label>
                         <input type="email"
                             id="email"
                             className="form-control"
-                            placeholder="Email address"
+                            placeholder="Enter Email!"
                             required autoFocus
                             value={loginUser.email}
                             onChange={handleInputChange} />
-                    </fieldset>
-                    <fieldset>
                         <button type="submit">
-                            Sign in
+                            Login
                         </button>
                     </fieldset>
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Register for an account</Link>
+                <Link to="/register">OR Register Here!</Link>
             </section>
         </main>
     )
