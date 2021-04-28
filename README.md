@@ -11,3 +11,7 @@ located there and they can access it at any time. When the user clicks on an ite
 it takes them to a menu where they're presented with options to remove it, like (or dislike) it,
 and rate it (with the ScareMeter!). There is also the ability to comment and connect with others
 about a certain piece of horror media. 
+---
+## Wireframe 
+---
+## ERD 
