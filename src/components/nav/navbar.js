@@ -12,13 +12,13 @@ export const NavBar = (props) => {
                     <a href="/"><img src="" alt="Logo"/></a>
                 </li>
                 <li className="navLink">
-                    <Link className="navButton">My List</Link>
-                </li>
-                <li className="navLink">
-                    <Link className="navButton">My Posts</Link>
-                </li>
-                <li className="navLink">
                     <Link className="navButton" to="/Login">Logout</Link>
+                </li>
+                <li className="navLink">
+                    <Link className="navButton" to="/">My Posts</Link>
+                </li>
+                <li className="navLink">
+                    <Link className="navButton" to="/">My List</Link>
                 </li>
             </ul>
         </nav>

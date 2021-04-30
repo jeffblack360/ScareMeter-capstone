@@ -4,7 +4,7 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { Home } from "./home/homepage"
 import { HorrorList } from "./horrorItems/horrorItemList"
-import { HorrorCard } from "./horrorItems/horrorItemCard"
+import { HorrorItemForm } from "./horrorItems/horrorItemForm"
 
 // don't forget to add links to other pages later
 
@@ -27,8 +27,8 @@ export const ApplicationViews = () => {
                 <HorrorList />
             </Route>
 
-            <Route exact path="/horrorItems">
-                <HorrorCard />
+            <Route exact path="/addHorrorItems">
+                <HorrorItemForm />
             </Route>
         </>
     )

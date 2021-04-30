@@ -1,12 +1,21 @@
 const remoteURL = "http://localhost:8088"
 
 export const getHorrorItemById = (id) => {
-    return fetch (`${remoteURL}/horrorItem/${id}?_expand=user`)
+    return fetch (`${remoteURL}/horrorItems/${id}?_expand=user`)
     .then(response => response.json())
 }
 
 export const getAllHorrorItems = () => {
-    return fetch (`${remoteURL}/horrorItem`)
+    return fetch (`${remoteURL}/horrorItems`)
     .then(response => response.json())
 }
 
+export const addHorrorItem = (newHorrorItem) => {
+    return fetch(`${remoteURL}/horrorItems`, {
+        method: "POST", 
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newHorrorItem)
+    }).then(response => response.json())
+}

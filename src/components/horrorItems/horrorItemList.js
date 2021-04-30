@@ -22,7 +22,7 @@ export const HorrorList = () => {
             <section className="section-content">
                 <button type="button"
                     className="add-btn"
-                    onClick={() => { history.push("/horrorItem/create") }}>
+                    onClick={() => { history.push("/horrorItems/create") }}>
                     +
             </button>
             </section>
