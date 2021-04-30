@@ -2,21 +2,23 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "./navbar.css"
 
-export const NavBar = () => {
+// don't forget to change these to links & add links to other pages later
+
+export const NavBar = (props) => {
     return (
         <nav className="navbar">
             <ul className="scareLogo">
                 <li className="navLogo">
-                    <img src="" alt="Logo" />
+                    <a href="/"><img src="" alt="Logo"/></a>
                 </li>
-                <li className="navButton">
-                    <button type="button" className="navButton">My List</button>
+                <li className="navLink">
+                    <Link className="navButton">My List</Link>
                 </li>
-                <li className="navButton">
-                    <button type="button" className="navButton">My Posts</button>
+                <li className="navLink">
+                    <Link className="navButton">My Posts</Link>
                 </li>
-                <li className="navButton">
-                    <button type="button" className="navButton">Logout</button>
+                <li className="navLink">
+                    <Link className="navButton" to="/Login">Logout</Link>
                 </li>
             </ul>
         </nav>
