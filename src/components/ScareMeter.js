@@ -5,6 +5,7 @@ import { NavBar } from "./nav/navbar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import "./ScareMeter.css"
+import "./home/homepage.css"
 
 export const ScareMeter = () => (
     <>
@@ -22,12 +23,5 @@ export const ScareMeter = () => (
                 }
             }}
         />
-
-        <Route path="/login">
-            <Login />
-        </Route>
-        <Route path="/register">
-            <Register />
-        </Route>
     </>
 )
