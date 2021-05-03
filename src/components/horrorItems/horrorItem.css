@@ -1,0 +1,11 @@
+.horror-image {
+    align-items: center;
+    padding: 10px;
+    margin: 30px 70px;
+    background-color: #CC5803;
+}
+
+img {
+    width: 10%;
+    height: auto;
+}

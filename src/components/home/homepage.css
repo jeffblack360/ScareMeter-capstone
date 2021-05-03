@@ -1,10 +1,12 @@
 .homePage {
     background-color: black;
-    padding-bottom: 50%;
-    padding-top: 1%;
 }
 
 .homeWelcome {
     color: brown;
     text-align: center;
+}
+
+.addButton {
+    background-color: chartreuse;
 }

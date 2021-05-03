@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router"
-import { getAllHorrorItems } from "../../modules/HorrorItemManager";
+import { deleteHorrorItem, getAllHorrorItems } from "../../modules/HorrorItemManager";
 import { HorrorCard } from "./horrorItemCard";
 
 export const HorrorList = () => {
@@ -13,6 +13,11 @@ export const HorrorList = () => {
         });
     };
 
+    const handleDeleteHorrorItem = id => {
+        deleteHorrorItem(id)
+            .then(() => getAllHorrorItems().then(setHorrorItems));
+    }
+
     useEffect(() => {
         getHorrorItems();
     }, []);
@@ -22,7 +27,7 @@ export const HorrorList = () => {
             <section className="section-content">
                 <button type="button"
                     className="add-btn"
-                    onClick={() => { history.push("/horrorItem/create") }}>
+                    onClick={() => { history.push("/horrorItems/create") }}>
                     +
             </button>
             </section>
@@ -30,8 +35,8 @@ export const HorrorList = () => {
                 {horrorItems.map(horrorItem =>
                     <HorrorCard
                         key={horrorItem.id}
-                        horrorItem={horrorItem} />)
-                }
+                        horrorItem={horrorItem} 
+                        handleDeleteHorrorItem={handleDeleteHorrorItem} />)}
             </div>
         </>
     )

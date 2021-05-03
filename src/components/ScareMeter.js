@@ -19,9 +19,16 @@ export const ScareMeter = () => (
                         </>
                     )
                 } else {
-                    return <Redirect to="/login" />;
+                    return <Redirect to="/Login" />;
                 }
             }}
         />
+        <Route path="/Login">
+            <Login />
+        </Route>
+
+        <Route path="/Register">
+            <Register />
+        </Route>
     </>
 )
