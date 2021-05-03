@@ -44,12 +44,8 @@ export const HorrorItemForm = () => {
     const handleClickSaveHorrorItem = (event) => {
         event.preventDefault()
     const newHorrorItemObject ={
-        title: horrorItem.title,
-        releaseDate: horrorItem.releaseDate,
-        description: horrorItem.description,
         categoryId: horrorItem.categoryId,
-        userId: horrorItem.userId,
-        img: horrorItem.img
+        userId: parseInt(sessionStorage.getItem("app_user_id"))
     }
         if (horrorCategory === 0) {
             window.alert("Boo! Don't forget your category!")

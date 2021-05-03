@@ -19,3 +19,9 @@ export const addHorrorItem = (newHorrorItem) => {
         body: JSON.stringify(newHorrorItem)
     }).then(response => response.json())
 }
+
+export const deleteHorrorItem = (id) => {
+    return fetch(`${remoteURL}/horrorItems/${id}`, {
+        method: "DELETE"
+    }).then(result => result.json())
+}
