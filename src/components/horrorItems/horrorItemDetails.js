@@ -32,11 +32,11 @@ export const HorrorItemDetail = () => {
 
     return (
         <section className="horrorDetail">
-            <h3 className="horrorTitle">Title {horrorItems.title} </h3>
-            <div className="horrorDate">Year Released {horrorItems.releaseDate} </div>
-            <div className="horrorDesc">Description {horrorItems.description} </div>
-            <div className="horrorCategory">Select Category:{horrorItems.category?.name} </div>
-            <div className="horrorImg">Add Image {horrorItems.img} </div>
+            <h3 className="title">Title {horrorItems.title} </h3>
+            <div className="releaseDate">Year Released {horrorItems.releaseDate} </div>
+            <div className="description">Description {horrorItems.description} </div>
+            <div className="horrorCategory">Category {horrorItems.category?.name} </div>
+            <div className="img">Add Image {horrorItems.img} </div>
         </section>
     );
 };

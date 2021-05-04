@@ -34,24 +34,24 @@ export const HorrorItemForm = () => {
     }
 
     useEffect(() => {
-
-    }, []);
-
-    useEffect(() => {
-
+        
     }, []);
 
     const handleClickSaveHorrorItem = (event) => {
         event.preventDefault()
     const newHorrorItemObject ={
+        title: horrorItem.title,
+        releaseDate: horrorItem.releaseDate,
+        description: horrorItem.description,
         categoryId: horrorItem.categoryId,
-        userId: parseInt(sessionStorage.getItem("app_user_id"))
+        userId: parseInt(sessionStorage.getItem("app_user_id")),
+        img: horrorItem.img
     }
         if (horrorCategory === 0) {
             window.alert("Boo! Don't forget your category!")
         } else {
             addHorrorItem(newHorrorItemObject)
-            .then(() => history.push("/horrorItems"))
+            .then(() => history.push("/"))
         }
     }
 
@@ -66,14 +66,14 @@ export const HorrorItemForm = () => {
             </fieldset>
             <fieldset>
             <div className="form-section">
-                    <label htmlFor="date">Release Date</label>
-                    <input type="text" id="date" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="date" value={horrorItem.releaseDate} />
+                    <label htmlFor="releaseDate">Release Year</label>
+                    <input type="text" id="releaseDate" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="date" value={horrorItem.releaseDate} />
                 </div>
             </fieldset>
             <fieldset>
             <div className="form-section">
-                    <label htmlFor="desc">Description</label>
-                    <input type="text" id="desc" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="desc" value={horrorItem.description} />
+                    <label htmlFor="description">Description</label>
+                    <input type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="desc" value={horrorItem.description} />
                 </div>
             </fieldset>
             <fieldset>
@@ -81,6 +81,30 @@ export const HorrorItemForm = () => {
                     <label htmlFor="category">Choose a Category</label>
                     <select value={horrorItem.categoryId} name="categoryId" id="categoryId" onChange={handleControlledInputChange} className="form-control" >
                         <option value="0">Select a Category</option>
+                        {horrorCategory.map(category => (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        ))}
+                        <option value="1">Movie</option>
+                        {horrorCategory.map(category => (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        ))}
+                        <option value="2">Show</option>
+                        {horrorCategory.map(category => (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        ))}
+                        <option value="3">Game</option>
+                        {horrorCategory.map(category => (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        ))}
+                        <option value="4">Book</option>
                         {horrorCategory.map(category => (
                             <option key={category.id} value={category.id}>
                                 {category.name}
