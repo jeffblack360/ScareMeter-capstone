@@ -1,7 +1,7 @@
 const remoteURL = "http://localhost:8088"
 
 export const getHorrorItemById = (id) => {
-    return fetch (`${remoteURL}/horrorItems/${id}?_expand=user`)
+    return fetch (`${remoteURL}/horrorItems/${id}?_expand=user&_expand=horrorCategory`)
     .then(response => response.json())
 }
 

@@ -30,6 +30,10 @@ export const ApplicationViews = () => {
             <Route exact path="/horrorPosts">
                 <HorrorPosts />
             </Route>
+
+            <Route exact path="/horrorList">
+                <HorrorList />
+            </Route>
         </>
     )
 }

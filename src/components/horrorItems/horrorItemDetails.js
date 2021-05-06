@@ -9,13 +9,6 @@ export const HorrorItemDetail = () => {
     const { horrorItemId } = useParams();
     const history = useHistory();
 
-    const deleteHorrorItem = () => {
-        setIsLoading(true);
-        deleteHorrorItem(horrorItemId).then(() =>
-            history.push("/horrorItems")
-        );
-    };
-
     useEffect(() => {
         console.log("useEffect", horrorItemId)
         getHorrorItemById(horrorItemId)
@@ -24,6 +17,7 @@ export const HorrorItemDetail = () => {
                     title: horrorItems.title,
                     releaseDate: horrorItems.releaseDate,
                     description: horrorItems.description,
+                    horrorCategory: horrorItems.category,
                     img: horrorItems.img
                 });
                 setIsLoading(false);
@@ -32,11 +26,11 @@ export const HorrorItemDetail = () => {
 
     return (
         <section className="horrorDetail">
-            <h3 className="title">Title {horrorItems.title} </h3>
-            <div className="releaseDate">Year Released {horrorItems.releaseDate} </div>
-            <div className="description">Description {horrorItems.description} </div>
-            <div className="horrorCategory">Category {horrorItems.category?.name} </div>
-            <div className="img">Add Image {horrorItems.img} </div>
+            <h3 className="horrortitle"> {horrorItems.title} </h3>
+            <div className="releaseDate"> {horrorItems.releaseDate} </div>
+            <div className="description"> {horrorItems.description} </div>
+            <div className="horrorCategory"> {horrorItems.category} </div>
+            <div className="img"> {horrorItems.img} </div>
         </section>
     );
 };
