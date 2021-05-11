@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom"
 import { getHorrorItemById } from "../../modules/HorrorItemManager"
 
 export const HorrorItemDetail = () => {
-    const [horrorItems, setHorrorItem] = useState({});
+    const [horrorItems, setHorrorItem] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const { horrorItemId } = useParams();

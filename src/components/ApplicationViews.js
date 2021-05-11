@@ -2,6 +2,7 @@ import React from "react"
 import { Route } from "react-router-dom"
 import { Home } from "./home/homepage"
 import { HorrorList } from "./horrorItems/horrorItemList"
+import { MyHorrorList } from "./nav/myList"
 import { HorrorItemForm } from "./horrorItems/horrorItemForm"
 import { HorrorItemDetail } from "./horrorItems/horrorItemDetails"
 import { HorrorPosts } from "./nav/myPosts"
@@ -33,6 +34,10 @@ export const ApplicationViews = () => {
 
             <Route exact path="/horrorList">
                 <HorrorList />
+            </Route>
+
+            <Route exact path="/myHorrorList">
+                <MyHorrorList />
             </Route>
         </>
     )

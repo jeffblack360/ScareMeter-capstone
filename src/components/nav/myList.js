@@ -1,31 +1,36 @@
-import React, { useState, useEffect } from "react"
-import { useHistory } from "react-router"
-import { deleteHorrorItem, getAllHorrorItems } from "../../modules/HorrorItemManager";
-import { HorrorItemForm } from "../horrorItems/horrorItemForm"
+import React from "react"
+import { useState } from "react-router-dom"
+import { getAllHorrorItems } from "../../modules/HorrorItemManager"
 
-export const HorrorList = () => {
-    const [horrorItems, setHorrorItems] = useState([]);
+// const MyListItem =
+// {
+//     "userId": "?",
+//     "title": "?",
+//     "releaseDate": "?",
+//     "description": "?",
+//     "categoryId": "?",
+//     "img": "?"
+// }
 
-    const getHorrorItems = () => {
-        return getAllHorrorItems().then(ItemsFromAPI => {
-            setHorrorItems(ItemsFromAPI)
-        });
-    };
+  export const MyHorrorList = () => {
+        const MyListItem =
+{
+    "userId": "?",
+    "title": "?",
+    "releaseDate": "?",
+    "description": "?",
+    "categoryId": "?",
+    "img": "?"
+}
+        const [horrorItems, setMyListItem] = React.useState(MyListItem)
 
-    const handleDeleteHorrorItem = id => {
-        deleteHorrorItem(id)
-            .then(() => getAllHorrorItems().then(setHorrorItems));
+        return (
+            <div>
+                {MyHorrorList.map((horrorItems) => (
+                    <div key={horrorItems.id}>{horrorItems.horrorItemId}</div>
+                ))}
+            </div>
+        )
     }
 
-    useEffect(() => {
-        getHorrorItems();
-    }, []);
-
-    return (
-        <>
-            <div className="horrorItem-container">
-                My Horror List 
-            </div>
-        </>
-    )
-}
+    export default MyHorrorList

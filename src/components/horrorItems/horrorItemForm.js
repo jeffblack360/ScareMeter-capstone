@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router"
 import { addHorrorItem } from "../../modules/HorrorItemManager"
+import "./horrorItemForm.css"
 
 export const HorrorItemForm = () => {
 
