@@ -24,7 +24,7 @@ export const ApplicationViews = () => {
                 <HorrorItemForm />
             </Route>
 
-            <Route exact path="/horrorDetails">
+            <Route exact path="/horrorDetail/:horrorItemId(\d+)">
                 <HorrorItemDetail />
             </Route>
 

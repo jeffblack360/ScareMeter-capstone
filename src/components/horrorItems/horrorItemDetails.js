@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useParams, useHistory } from "react-router-dom"
+import { useParams, useHistory, Link } from "react-router-dom"
 import { getHorrorItemById } from "../../modules/HorrorItemManager"
 
 export const HorrorItemDetail = () => {
@@ -7,22 +7,17 @@ export const HorrorItemDetail = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const { horrorItemId } = useParams();
+    console.log(horrorItemId)
     const history = useHistory();
 
     useEffect(() => {
         console.log("useEffect", horrorItemId)
         getHorrorItemById(horrorItemId)
             .then(horrorItems => {
-                setHorrorItem ({
-                    title: horrorItems.title,
-                    releaseDate: horrorItems.releaseDate,
-                    description: horrorItems.description,
-                    horrorCategory: horrorItems.category,
-                    img: horrorItems.img
-                });
+                setHorrorItem(horrorItems)
                 setIsLoading(false);
             });
-    }, [horrorItemId]);
+    }, []);
 
     return (
         <section className="horrorDetail">
@@ -30,7 +25,7 @@ export const HorrorItemDetail = () => {
             <div className="releaseDate"> {horrorItems.releaseDate} </div>
             <div className="description"> {horrorItems.description} </div>
             <div className="horrorCategory"> {horrorItems.category} </div>
-            <div className="img"> {horrorItems.img} </div>
+            <Link className="img"> {horrorItems.img} </Link>
         </section>
     );
 };
