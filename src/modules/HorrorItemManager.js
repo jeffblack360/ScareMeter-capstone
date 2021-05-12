@@ -6,7 +6,7 @@ export const getAllHorrorItems = () => {
 }
 
 export const getHorrorItemById = (id) => {
-    return fetch (`${remoteURL}/horrorItems/${id}`)
+    return fetch (`${remoteURL}/horrorItems/${id}?_embed=userItems`)
     .then(response => response.json())
 }
 
