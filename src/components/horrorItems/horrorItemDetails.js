@@ -26,6 +26,7 @@ export const HorrorItemDetail = () => {
             <div className="releaseDate"> {horrorItem.releaseDate} </div>
             <div className="description"> {horrorItem.description} </div>
             <div className="horrorCategory"> {horrorItem.category} </div>
+            <img src={horrorItem.img} className="horrorImg" />
             <ProgressBar now={50} animated variant="success"/>
         </section>
     );
