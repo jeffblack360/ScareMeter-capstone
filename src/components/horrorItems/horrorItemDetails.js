@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { useParams, useHistory, Link } from "react-router-dom"
 import { getHorrorItemById } from "../../modules/HorrorItemManager"
+import ProgressBar from "react-bootstrap/ProgressBar"
 
 export const HorrorItemDetail = () => {
-    const [horrorItems, setHorrorItem] = useState([]);
+    const [horrorItem, setHorrorItem] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const { horrorItemId } = useParams();
@@ -13,19 +14,20 @@ export const HorrorItemDetail = () => {
     useEffect(() => {
         console.log("useEffect", horrorItemId)
         getHorrorItemById(horrorItemId)
-            .then(horrorItems => {
-                setHorrorItem(horrorItems)
+            .then(horrorItem => {
+                setHorrorItem(horrorItem)
                 setIsLoading(false);
             });
     }, []);
 
     return (
         <section className="horrorDetail">
-            <h3 className="horrortitle"> {horrorItems.title} </h3>
-            <div className="releaseDate"> {horrorItems.releaseDate} </div>
-            <div className="description"> {horrorItems.description} </div>
-            <div className="horrorCategory"> {horrorItems.category} </div>
-            <Link className="img"> {horrorItems.img} </Link>
+            <h3 className="horrortitle"> {horrorItem.title} </h3>
+            <div className="releaseDate"> {horrorItem.releaseDate} </div>
+            <div className="description"> {horrorItem.description} </div>
+            <div className="horrorCategory"> {horrorItem.category} </div>
+            <img src={horrorItem.img} className="horrorImg" />
+            <ProgressBar now={50} animated variant="success"/>
         </section>
     );
 };

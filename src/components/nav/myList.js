@@ -1,16 +1,6 @@
 import React from "react"
 import { useState } from "react-router-dom"
-import { getAllHorrorItems } from "../../modules/HorrorItemManager"
-
-// const MyListItem =
-// {
-//     "userId": "?",
-//     "title": "?",
-//     "releaseDate": "?",
-//     "description": "?",
-//     "categoryId": "?",
-//     "img": "?"
-// }
+import { getMyHorrorItems } from "../../modules/HorrorItemManager"
 
   export const MyHorrorList = () => {
         const MyListItem =
@@ -33,4 +23,4 @@ import { getAllHorrorItems } from "../../modules/HorrorItemManager"
         )
     }
 
-    export default MyHorrorList
+    export default MyHorrorList 
